@@ -22,9 +22,9 @@ function formatearFechaCorta(fechaISO) {
 }
 
 /* ============================================================
-   <evento-card>
-   Atributos: id, codigo, nombre, categoria, ciudad, fecha, hora, precio, imagen
-   Emite: 'agregar-carrito' (detail: { eventoId }) y 'ver-detalle' (detail: { eventoId })
+  <evento-card>
+  Atributos: id, codigo, nombre, categoria, ciudad, fecha, hora, precio, imagen
+  Emite: 'agregar-carrito' (detail: { eventoId }) y 'ver-detalle' (detail: { eventoId })
    ============================================================ */
 class EventoCard extends HTMLElement {
   constructor() {
