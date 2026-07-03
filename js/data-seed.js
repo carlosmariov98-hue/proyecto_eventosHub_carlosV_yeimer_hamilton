@@ -1,7 +1,7 @@
 /* ============================================================
   TuEventoHub.com — data-seed.js
   Carga los datos iniciales desde archivos .json reales
-  (assets/data/categorias.json y assets/data/eventos.json)
+  (assent/data/categorias.json y assent/data/eventos.json)
   y los guarda una sola vez en localStorage con JSON.stringify().
   Las siguientes veces se leen directo de localStorage con JSON.parse().
    ============================================================ */
@@ -20,11 +20,11 @@
   async function inicializarDatosSemilla() {
     try {
       if (localStorage.getItem(STORAGE_KEYS.CATEGORIAS) === null) {
-        const categorias = await cargarJSON('assets/data/categorias.json');
+        const categorias = await cargarJSON('assent/data/categorias.json');
         Storage.set(STORAGE_KEYS.CATEGORIAS, categorias); // aquí se hace JSON.stringify()
       }
       if (localStorage.getItem(STORAGE_KEYS.EVENTOS) === null) {
-        const eventos = await cargarJSON('assets/data/eventos.json');
+        const eventos = await cargarJSON('assent/data/eventos.json');
         Storage.set(STORAGE_KEYS.EVENTOS, eventos);
       }
     } catch (error) {
