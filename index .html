@@ -108,11 +108,11 @@
         </div>
         <div class="filter-block">
           <h4>Buscar</h4>
-          <input type="text" id="filter-busqueda" placeholder="Nombre del evento..." style="width:100%;border:1px solid var(--color-border-strong);border-radius:8px;padding:.6rem .8rem;" />
+          <input type="text" id="filter-busqueda" placeholder="Nombre del evento..."/>
         </div>
         <div class="filter-block">
           <h4>Precio máximo</h4>
-          <input type="range" id="filter-precio" min="0" max="200000" step="5000" value="200000" style="width:100%;" />
+          <input type="range" id="filter-precio" min="0" max="200000" step="5000" value="200000"/>
           <div class="filter-price"><span>$0</span><span id="filter-precio-label">$200.000+</span></div>
         </div>
       </aside>
@@ -145,7 +145,7 @@
       <div class="carrito-summary">
         <div class="summary-row"><span>Eventos</span><span id="carrito-cant">0</span></div>
         <div class="summary-row total"><span>Total</span><span id="carrito-total">$0</span></div>
-        <button class="btn btn-primary btn-block" id="btn-ir-compra" style="margin-top:1rem;">Proceder a compra</button>
+        <button class="btn btn-primary btn-block" id="btn-ir-compra">Proceder a compra</button>
       </div>
     </div>
   </section>
@@ -201,7 +201,7 @@
       <div class="confirmacion">
         <div class="icon-check">✓</div>
         <h2>¡Compra confirmada!</h2>
-        <p style="color:var(--color-text-muted);margin:.75rem 0 1.5rem;">
+        <p>
           Hemos registrado tu pedido <strong id="confirmacion-id"></strong>. Te enviamos los detalles a tu correo.
         </p>
         <a href="#/eventos" class="btn btn-primary">Seguir explorando eventos</a>
