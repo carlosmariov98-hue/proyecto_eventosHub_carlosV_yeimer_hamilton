@@ -433,6 +433,5 @@ evento-card, carrito-item, categoria-card { display: block; }
 logo
 ----------------------------------------------------------------*/
 .imagen{
-  width: 120px;
-  height: 110px;
+  width: 120px; height: 110px; margin-left: 50px;
 }
