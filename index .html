@@ -18,8 +18,6 @@
     <nav class="main-nav" id="main-nav">
       <a href="#/" data-route="/">Inicio</a>
       <a href="#/eventos" data-route="/eventos">Eventos</a>
-      <a href="#/eventos" data-route="/categorias-link">Categorías</a>
-      <a href="#/eventos" data-route="/ciudades-link">Ciudades</a>
     </nav>
     <div class="header-actions">
       <a href="#/carrito" class="btn-icon cart-btn" title="Carrito">
@@ -102,9 +100,8 @@
         </div>
         <div class="filter-block">
           <h4>Ciudad</h4>
-          <select id="filter-ciudad" class="form-group-select">
-            <option value="">Todas las ciudades</option>
-          </select>
+          <input type="text" id="filter-ciudad" class="form-group-select" list="listaCiudades" placeholder="Escribe una ciudad..." autocomplete="off" />
+          <datalist id="listaCiudades"></datalist>
         </div>
         <div class="filter-block">
           <h4>Buscar</h4>
@@ -224,7 +221,6 @@
       </div>
       <div>
         <h4>Enlaces</h4>
-        <ul><li><a href="#/">Inicio</a></li><li><a href="#/eventos">Eventos</a></li><li><a href="#/eventos">Categorías</a></li><li><a href="#/eventos">Ciudades</a></li></ul>
       </div>
       <div>
         <h4>Ayuda</h4>
@@ -244,6 +240,7 @@
 <script src="js/storage.js"></script>
 <script src="js/data-seed.js"></script>
 <script src="js/components.js"></script>
+<script src="js/filtradociudades.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>
