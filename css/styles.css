@@ -410,3 +410,11 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 800; line-height
    (estilos de host; el shadow DOM trae los suyos, ver components.js)
    ============================================================ */
 evento-card, carrito-item, categoria-card { display: block; }
+
+/*----------------------------------------------------------------
+logo
+----------------------------------------------------------------*/
+.imagen{
+  width: 120px;
+  height: 110px;
+}
