@@ -200,11 +200,14 @@
       });
     });
   
-    const selCiudad = document.getElementById('filter-ciudad');
-    const ciudades = [...new Set(state.eventos.map((e) => e.ciudad))].sort();
-    selCiudad.innerHTML = '<option value="">Todas las ciudades</option>' +
-      ciudades.map((c) => `<option value="${c}" ${state.filtros.ciudad === c ? 'selected' : ''}>${c}</option>`).join('');
-    selCiudad.onchange = () => { state.filtros.ciudad = selCiudad.value; state.pagina = 1; renderEventos(); };
+    const inputCiudad = document.getElementById('filter-ciudad');
+    cargarCiudadesEnDatalist(); // desde filtradociudades.js -> assent/data/ciudades.json
+    inputCiudad.value = state.filtros.ciudad;
+    inputCiudad.oninput = () => {
+      state.filtros.ciudad = inputCiudad.value.trim();
+      state.pagina = 1;
+      renderEventos();
+    };
   
     const inputBusqueda = document.getElementById('filter-busqueda');
     inputBusqueda.value = state.filtros.busqueda;
@@ -233,7 +236,8 @@
   function obtenerEventosFiltrados() {
     return state.eventos.filter((ev) => {
       const pasaCategoria = state.filtros.categorias.length === 0 || state.filtros.categorias.includes(ev.categoriaId);
-      const pasaCiudad = !state.filtros.ciudad || ev.ciudad === state.filtros.ciudad;
+      const pasaCiudad = !state.filtros.ciudad
+        || normalizarTexto(ev.ciudad).includes(normalizarTexto(state.filtros.ciudad));
       const pasaBusqueda = !state.filtros.busqueda || ev.nombre.toLowerCase().includes(state.filtros.busqueda.toLowerCase());
       const pasaPrecio = ev.precio <= state.filtros.precioMax;
       return pasaCategoria && pasaCiudad && pasaBusqueda && pasaPrecio;
