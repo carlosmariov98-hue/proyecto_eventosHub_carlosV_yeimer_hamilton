@@ -1,72 +1,91 @@
-# TuEventoHub.com
+# # <img src="assent/imagen/hub.png" alt="EventosHub Logo" width="45" valign="middle"> EventosHub
 
-Plataforma web de venta de entradas para eventos, dividida en dos frentes:
-vista pública para clientes (`index.html`) y panel de administración (`admin.html`).
+¡Bienvenido a **EventosHub**! Una plataforma web moderna, interactiva y completamente responsiva diseñada para la búsqueda, filtrado, gestión y simulación de compra de entradas para todo tipo de eventos culturales, musicales y académicos.
 
-## Acceso administrador
-- **Correo:** `admin@mail.com`
-- **Contraseña:** `123456`
+Este proyecto fue desarrollado de forma colaborativa enfocado en brindar una experiencia de usuario fluida (*UX/UI*) y una arquitectura modular en JavaScript vainilla con persistencia en el almacenamiento local (`LocalStorage`).
 
-## Estructura de carpetas
+---
 
-```
-Proyecto_TuEventoHub/
-├── index.html          # Vista pública (home, eventos, detalle, carrito, compra)
-├── admin.html           # Login + panel de administración
+## 🚀 Características Principales
+
+- **Exploración Interactiva**: Catálogo dinámico cargado desde módulos de datos JSON (`eventos.json`, `categorias.json`, `ciudades.json`).
+- **Filtrado Avanzado**: Búsqueda en tiempo real por categorías y ciudades para encontrar eventos específicos de forma instantánea.
+- **Carrito de Compras**: Añade entradas al carrito, gestiona cantidades y visualiza el desglose de precios en tiempo real.
+- **Panel Administrativo (Dashboard)**: Gestión completa de eventos, visualización de estadísticas y control de usuarios registrados.
+- **Diseño Mobile-First & Responsivo**: Interfaz adaptada al 100% para dispositivos móviles y de escritorio mediante hojas de estilos dinámicas.
+
+---
+
+## 📸 Capturas de Pantalla (Vistas de la Aplicación)
+
+Para demostrar el enfoque híbrido y responsivo, a continuación se presentan las vistas principales tanto en escritorio como en dispositivos móviles:
+
+### 1. Portal del Catálogo de Eventos
+La pantalla principal permite descubrir los eventos destacados del momento y filtrarlos con facilidad.
+
+| Vista de Escritorio | Vista Móvil |
+| :---: | :---: |
+| ![Portal de Eventos Desktop](assent/imagen/Portal%20eventos.jpeg) | <img src="assent/imagen/Portal eventos telefono.jpeg" width="220" alt="Portal Eventos Mobile"> |
+
+### 2. Carrito de Compras
+Flujo simplificado para la verificación de entradas y simulación de pago.
+
+| Vista de Escritorio | Vista Móvil |
+| :---: | :---: |
+| ![Carrito Desktop](assent/imagen/Portal%20carrito.jpeg) | <img src="assent/imagen/Portal carrito telefono.jpeg" width="220" alt="Carrito Mobile"> |
+
+### 3. Portal de Gestión de Usuarios
+Área dedicada al control, registro y perfil de las personas usuarias de la plataforma.
+
+| Vista de Escritorio | Vista Móvil |
+| :---: | :---: |
+| ![Portal Usuarios Desktop](assent/imagen/Portal%20usuarios.jpeg) | <img src="assent/imagen/Portal usuarios telefono.jpeg" width="220" alt="Usuarios Mobile"> |
+
+### 4. Control de Acceso Administrativo
+Inicio de sesión seguro para el perfil administrador.
+
+| Vista de Escritorio | Vista Móvil |
+| :---: | :---: |
+| ![Login Admin Desktop](assent/imagen/Login%20admin.jpeg) | <img src="assent/imagen/Login admin telefono.jpeg" width="220" alt="Login Admin Mobile"> |
+
+### 5. Panel Administrativo (Dashboard)
+Panel de control integral para monitorear métricas clave y gestionar bases de datos dinámicas.
+
+| Vista de Escritorio | Vista Móvil |
+| :---: | :---: |
+| ![Dashboard Desktop](assent/imagen/Dashboard.jpeg) | <img src="assent/imagen/Dashboard%20telefono.jpeg" width="220" alt="Dashboard Mobile"> |
+
+---
+
+## 🛠️ Tecnologías Utilizadas
+
+El proyecto fue desarrollado utilizando estándares web modernos sin dependencias externas complejas:
+
+- **HTML5**: Estructuración semántica de las interfaces.
+- **CSS3**: Estilos personalizados utilizando variables, Flexbox, CSS Grid y Media Queries para la adaptación móvil (`responsive.css`).
+- **JavaScript (ES6+)**: Lógica e interactividad modularizada:
+  - `storage.js`: Controlador centralizado para manipulación del almacenamiento.
+  - `filtradociudades.js`: Algoritmia de filtrado y consultas ágiles.
+  - `components.js`: Elementos reutilizables de la UI.
+- **JSON**: Almacenamiento local semilla (`data-seed.js`) para simular respuestas de bases de datos.
+
+---
+
+## 📂 Estructura del Proyecto
+
+```text
+├── index .html               # Portal principal orientado a clientes
+├── admin.html                # Panel operativo del administrador
 ├── css/
-│   ├── styles.css        # Variables :root, reset, componentes y layout
-│   └── responsive.css     # Breakpoints tablet / móvil
+│   ├── styles.css            # Estilos globales y layouts de escritorio
+│   └── responsive.css        # Breakpoints específicos para smartphones y tablets
 ├── js/
-│   ├── storage.js         # Capa de persistencia sobre localStorage
-│   ├── data-seed.js       # Carga categorias.json/eventos.json a localStorage (fetch + JSON.stringify)
-│   ├── components.js      # Web Components: evento-card, carrito-item, categoria-card
-│   ├── main.js             # Router y lógica de la vista pública
-│   └── admin.js            # Login, guardia de sesión y CRUD del panel
-└── assets/
-    ├── img/
-    └── data/
-        ├── categorias.json
-        └── eventos.json
-```
-
-> **Importante:** como `data-seed.js` usa `fetch()` para leer los `.json`, el proyecto
-> **debe abrirse con un servidor local** (Live Server, `npx serve`, etc.) y no con
-> doble clic sobre `index.html` (`file://`), porque los navegadores bloquean `fetch`
-> a archivos locales por seguridad (CORS).
-
-## Persistencia (localStorage)
-
-| Clave | Tipo | Uso | Origen la primera vez |
-|---|---|---|---|
-| `categorias` | Array de objetos | Categorías disponibles | `assets/data/categorias.json` |
-| `eventos` | Array de objetos | Eventos creados por el administrador | `assets/data/eventos.json` |
-| `carrito` | Array de objetos | Eventos seleccionados por el cliente | Array vacío `[]` |
-| `ventas` | Array de objetos | Compras realizadas | Array vacío `[]` |
-| `sesionAdmin` | Objeto | Control de sesión del administrador | No existe hasta iniciar sesión |
-
-En cargas posteriores, `data-seed.js` detecta que las claves ya existen en
-`localStorage` y **no vuelve a hacer fetch**: todo se lee directo con
-`JSON.parse(localStorage.getItem(clave))` a través de `Storage.get()`.
-
-## Cómo ejecutarlo
-
-No requiere build ni dependencias, pero **sí necesita un servidor local**
-(por el `fetch()` a los `.json`). Opciones simples:
-
-```bash
-# Con Node instalado
-npx serve .
-
-# o con Python
-python3 -m http.server 5500
-```
-
-Y luego abrir `http://localhost:5500` (o el puerto que indique). También
-funciona con la extensión "Live Server" de VS Code.
-
-## Flujo principal
-
-1. El cliente explora eventos en `index.html`, filtra por categoría/ciudad/precio y agrega al carrito.
-2. Completa sus datos en el checkout → se guarda una venta en `localStorage`.
-3. El administrador inicia sesión en `admin.html` y gestiona categorías y eventos (CRUD completo).
-4. El panel de ventas muestra los pedidos ordenados por fecha, con detalle por pedido.
+│   ├── main.js               # Hilo principal de inicialización de la app
+│   ├── admin.js              # Lógica operativa del panel de control
+│   ├── components.js         # Componentes dinámicos e inyección HTML
+│   ├── filtradociudades.js   # Manejo de filtros y búsquedas locativas
+│   ├── storage.js            # Interfaz de persistencia (LocalStorage)
+│   └── data-seed.js          # Inyección de datos semilla iniciales
+└── assent/
+    ├── data/                 # Archivos JSON de configuración (eventos, categorías, ciudades)
+    └── imagen/               # Repositorio de recursos multimedia y capturas
