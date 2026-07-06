@@ -1,10 +1,4 @@
-/* ============================================================
-   TuEventoHub.com — main.js
-   Lógica de la vista pública: router simple por hash, render DOM,
-   filtros, carrito y checkout. Todo persiste en localStorage.
-   ============================================================ */
-
-   const ICONOS_CATEGORIA = {
+  const ICONOS_CATEGORIA = {
     Conciertos: '🎵', Deportes: '🏅', Teatro: '🎭', 'Arte y Cultura': '🖼️',
     Gastronomía: '🍽️', Conferencias: '🎤', Fiestas: '🎉',
   };
