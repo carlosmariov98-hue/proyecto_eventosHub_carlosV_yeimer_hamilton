@@ -105,3 +105,31 @@ El proyecto fue desarrollado utilizando estándares web modernos sin dependencia
 └── assent/
     ├── data/                 # Archivos JSON de configuración (eventos, categorías, ciudades)
     └── imagen/               # Repositorio de recursos multimedia y capturas del sistema
+
+## 💻✨ Pasos de ejecucion
+
+Paso 1: Abrir la carpeta del proyecto en VS Code
+Abre Visual Studio Code.
+
+-En el menú superior, haz clic en File (Archivo) > Open Folder... (Abrir carpeta...).
+
+-Busca y selecciona la carpeta raíz del proyecto (EventosHub) donde se encuentran los archivos index.html, admin.html y las carpetas css/, js/, etc. Haz clic en Seleccionar carpeta.
+
+Paso 2: Verificar la extensión Live Server
+Para que los módulos de JavaScript (type="module") carguen los archivos JSON localmente sin bloqueos de seguridad del navegador (CORS policy), es necesario usar un servidor local.
+
+-Ve al menú lateral izquierdo de VS Code y haz clic en el icono de Extensions (Extensiones) (o presiona Ctrl + Shift + X en Windows/Linux o Cmd + Shift + X en Mac).
+
+-En la barra de búsqueda escribe Live Server (creado por Ritwick Dey).
+
+-Si no la tienes instalada, haz clic en el botón verde Install (Instalar). Si ya la tienes, puedes continuar.
+
+Paso 3: Abrir el archivo principal
+En el panel izquierdo de Explorer (Explorador), busca y haz clic sobre el archivo index.html para seleccionarlo y abrirlo en el editor de código.
+
+Paso 4: Ejecutar con Live Server
+Con el archivo index.html abierto o seleccionado, mira en la esquina inferior derecha de la ventana de Visual Studio Code.
+
+-Verás un botón que dice Go Live. Haz clic en él, La otra opcion es hacer click derecho sobre el archivo index.html y darle en la opcion de abrir con live server.
+
+-Automáticamente se abrirá una pestaña en tu navegador web predeterminado (como Chrome, Edge o Firefox) mostrando la aplicación corriendo en una dirección local (por ejemplo, http://127.0.0.1:5500/index.html).

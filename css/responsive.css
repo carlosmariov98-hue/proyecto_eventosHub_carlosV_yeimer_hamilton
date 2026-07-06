@@ -1,6 +1,6 @@
 /* ============================================================
-   TuEventoHub.com — Responsive
-   Mobile-first: ajustes progresivos por breakpoint
+  TuEventoHub.com — Responsive
+  Mobile-first: ajustes progresivos por breakpoint
    ============================================================ */
 
 /* Tablet */
@@ -33,7 +33,7 @@
 }
 
 /* ============================================================
-   Ajustes responsive específicos de layout (público + admin)
+  Ajustes responsive específicos de layout (público + admin)
    ============================================================ */
 @media (max-width: 1100px) {
   .hero-grid { grid-template-columns: 1fr; }
