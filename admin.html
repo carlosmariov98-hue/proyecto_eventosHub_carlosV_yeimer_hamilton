@@ -45,6 +45,7 @@
       <a href="#/eventos" class="nav-link" data-route="/eventos">🎫 Eventos</a>
       <a href="#/categorias" class="nav-link" data-route="/categorias">🏷️ Categorías</a>
       <a href="#/ventas" class="nav-link" data-route="/ventas">💳 Ventas</a>
+      <a href="#/reporte" class="nav-link" data-route="/reporte" id="nav-reporte-ventas">📅 Reporte de ventas</a>
     </nav>
     <button class="nav-link logout" id="btn-logout" type="button">🚪 Cerrar sesión</button>
   </aside>
@@ -110,6 +111,50 @@
           <tbody id="ventas-tbody"></tbody>
         </table>
       </section>
+      <!-- VISTA: REPORTE DE VENTAS -->
+      <section id="admin-view-reporte" class="view" hidden>
+        <div class="table-toolbar">
+          <div style="display:flex; gap:.75rem; align-items:center;">
+            <select id="reporte-anio"></select>
+            <select id="reporte-mes">
+              <option value="01">Enero</option>
+              <option value="02">Febrero</option>
+              <option value="03">Marzo</option>
+              <option value="04">Abril</option>
+              <option value="05">Mayo</option>
+              <option value="06">Junio</option>
+              <option value="07">Julio</option>
+              <option value="08">Agosto</option>
+              <option value="09">Septiembre</option>
+              <option value="10">Octubre</option>
+              <option value="11">Noviembre</option>
+              <option value="12">Diciembre</option>
+            </select>
+            <button type="button" class="btn btn-primary" id="btn-generar-reporte">Generar reporte</button>
+          </div>
+        </div>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Código</th>
+              <th>Nombre del evento</th>
+              <th>Cantidad vendida</th>
+              <th>Valor total</th>
+            </tr>
+          </thead>
+          <tbody id="reporte-tbody">
+            <tr><td colspan="4"><div class="empty-state"><h3>Elige un año y un mes</h3><p>Luego presiona "Generar reporte" para ver las ventas de ese periodo.</p></div></td></tr>
+          </tbody>
+        </table>
+
+        <div class="carrito-summary">
+          <div class="summary-row total">
+            <span>Total general del mes</span>
+            <span id="reporte-total-general">$0</span>
+          </div>
+        </div>
+      </section>
 
     </div>
   </div>
@@ -123,5 +168,6 @@
 <script src="js/data-seed.js"></script>
 <script src="js/components.js"></script>
 <script src="js/admin.js"></script>
+<script src="js/reporte-ventas.js"></script>
 </body>
 </html>

@@ -77,8 +77,8 @@
     /* ============================================================
         ROUTER DEL PANEL
         ============================================================ */
-    const ADMIN_VISTAS = ['dashboard', 'eventos', 'categorias', 'ventas'];
-    const TITULOS = { dashboard: 'Dashboard', eventos: 'Eventos', categorias: 'Categorías', ventas: 'Ventas' };
+      const ADMIN_VISTAS = ['dashboard', 'eventos', 'categorias', 'ventas', 'reporte'];
+      const TITULOS = { dashboard: 'Dashboard', eventos: 'Eventos', categorias: 'Categorías', ventas: 'Ventas', reporte: 'Reporte de ventas' };
     
     function navegarAdmin(ruta) { window.location.hash = ruta; }
     

@@ -37,3 +37,11 @@ const Storage = {
     localStorage.removeItem(key);
   },
 };
+
+function obtenerVentasGuardadas() {
+  return Storage.get(STORAGE_KEYS.VENTAS, []);
+}
+
+function obtenerEventosGuardados() {
+  return Storage.get(STORAGE_KEYS.EVENTOS, []);
+}
